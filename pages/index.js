@@ -5,7 +5,7 @@ export default function Home() {
     <Layout title="Tanisha Sabherwal">
           <div>
                 <h1>Hi 👋 I am Tanisha !</h1>
-                <p>This site is currently WIP</p>
+                <p>This site is currently a WIP</p>
                 {/* {
                     ABOUT_DATA.description.map(paragraph=>(
                         <>

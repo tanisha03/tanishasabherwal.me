@@ -4,10 +4,10 @@ import Link from "next/link";
 import {Icons} from '../assets/Icon';
 
 const LINKS=[
-  // {
-  //     icon:'email',
-  //     link:'mailto:tanisha031199@gmail.com'
-  // },
+  {
+      icon:'email',
+      link:'mailto:tanisha031199@gmail.com'
+  },
   {
       icon:'twitter',
       link:'https://twitter.com/tanishaaa03'
@@ -16,10 +16,10 @@ const LINKS=[
       icon:'github',
       link:'https://github.com/tanisha03'
   },
-  // {
-  //     icon:'medium',
-  //     link:'https://medium.com/@tanisha031199'
-  // }
+  {
+      icon:'medium',
+      link:'https://medium.com/@tanisha031199'
+  }
 ];
 
 export default function Home(props) {
@@ -61,7 +61,7 @@ export default function Home(props) {
                    )) 
                 } 
             </div>
-            © TANISHA SABHERWAL {new Date().getFullYear()}
+            {/* © TANISHA SABHERWAL {new Date().getFullYear()} */}
       </footer>
 
     </div>

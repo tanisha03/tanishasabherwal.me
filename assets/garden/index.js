@@ -1,4 +1,4 @@
-import Layout from '../Layout';
+import Layout from '../../pages/Layout';
 import { getDatabase } from "../../lib/notion";
 import Link from "next/link";
 import styles from './index.module.css'

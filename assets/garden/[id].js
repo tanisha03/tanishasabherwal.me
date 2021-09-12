@@ -4,7 +4,7 @@ import { getDatabase, getPage, getBlocks } from "../../lib/notion";
 import Link from "next/link";
 import { databaseId } from "./index.js";
 import styles from "./post.module.css";
-import Layout from '../Layout';
+import Layout from '../../pages/Layout';
 
 export const Text = ({ text }) => {
   if (!text) {
