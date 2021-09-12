@@ -55,7 +55,7 @@ export default function Home(props) {
             <div>
                 {
                    LINKS.map(link=>(
-                       <Link href={link.link} aria-label={link.icon} target="_blank" rel="noopener">
+                       <Link href={link.link} aria-label={link.icon} target="_blank" rel="noopener" key={link.index}>
                            <a>{Icons?.social[link.icon]}</a>
                        </Link>
                    )) 

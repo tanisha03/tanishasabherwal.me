@@ -25,6 +25,7 @@ export const Text = ({ text }) => {
           underline ? styles.underline : "",
         ].join(" ")}
         style={color !== "default" ? { color } : {}}
+        key={value.index}
       >
         {text.link ? <a href={text.link.url}>{text.content}</a> : text.content}
       </span>
