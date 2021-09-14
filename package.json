@@ -10,11 +10,14 @@
   },
   "dependencies": {
     "@notionhq/client": "^0.3.1",
+    "babel-preset-next": "^1.4.0",
     "next": "11.1.2",
     "react": "17.0.2",
-    "react-dom": "17.0.2"
+    "react-dom": "17.0.2",
+    "styled-components": "^5.3.1"
   },
   "devDependencies": {
+    "babel-plugin-styled-components": "^1.13.2",
     "eslint": "7.32.0",
     "eslint-config-next": "11.1.2"
   }
