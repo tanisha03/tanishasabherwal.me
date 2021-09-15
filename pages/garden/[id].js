@@ -95,7 +95,7 @@ const renderBlock = (block) => {
       const src =
         value.type === "external" ? value.external.url : value.file.url;
       // const caption = value.caption ? value.caption[0].plain_text : "";
-      const caption = "hhhhh";
+      const caption = "";
       return (
         <figure>
           <img src={src} alt={caption} />

@@ -1,3 +1,4 @@
+import { useState } from 'react';
 import Layout from '../Layout';
 import { getDatabase } from "../../lib/notion";
 import Link from "next/link";
@@ -11,32 +12,31 @@ export const databaseId = process.env.NOTION_DATABASE_ID;
 
 
 export default function Garden({posts}) {
-  var growthStage = tokens.terms.garden,
-        gardenQuery = transformGardenQuery(posts);
+  const [gardenQuery, setGardenQuery] = useState(transformGardenQuery(posts));
+  var growthStage = tokens.terms.garden;
   var gardenTopics = extractTopicsFromGardenQuery(posts);
   console.log(posts,gardenTopics);
 
-
   const handleStateFilter = (key) => {
-    const filteredCards = gardenQuery.edges.filter(card=>{
-      return card.node.frontmatter.growthStage === key
+    const filteredCards = transformGardenQuery(posts).filter(card=>{
+      return card.growthStage === key
     });
 
-    setGardenNotes(filteredCards);
+    setGardenQuery(filteredCards);
   };
 
   const handleTopicFilter = (topic) => {
 
     if(topic==="All") {
-      setGardenNotes(gardenQuery.edges);
+      setGardenQuery(transformGardenQuery(posts));
       return;
     }
 
-    const filteredCards = gardenQuery.edges.filter(card=>{
-      return card.node.frontmatter.topics.includes(topic);
+    const filteredCards = transformGardenQuery(posts).filter(card=>{
+      return card.topics.includes(topic);
     });
 
-    setGardenNotes(filteredCards);
+    setGardenQuery(filteredCards);
   };
 
 
