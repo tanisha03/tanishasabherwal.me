@@ -46,14 +46,14 @@ span{
 `;
 
 const TopicsSection =  styled.div`
-padding:2% 4% 0 4%;
+padding:2% 0;
 display:flex;
 flex-wrap:wrap;
 justify-content:flex-start;
 color:${tokens.colors.tertiary[0]};
 span{
-  margin:0 ${tokens.space[2]};
-  padding:${tokens.space[1]} ${tokens.space[2]};
+  margin-right: ${tokens.space[2]};
+  padding: 0 ${tokens.space[1]} ${tokens.space[2]} 0;
   cursor:pointer;
   &:hover{
     color:${tokens.colors.primary[1]};
@@ -66,8 +66,62 @@ span{
 }
 `;
 
+const GardenContainer =  styled.div`
+  display:flex;
+  flex-wrap:wrap;
+  float:left;
+  div{
+    margin:${tokens.space[6]} ${tokens.space[6]} 0 0;
+  }
+  @media only screen and (max-width: 576px) {
+    a{
+      width:100%;
+      div{
+        width:100%;
+        margin:${tokens.space[4]} 0;
+      }
+    }
+}
+`;
+
+GardenContainer.GardenCard =  styled.div`
+height:130px;
+width:280px;
+background-color:#FCFBFE;
+display:flex;
+justify-content:space-between;
+// align-items:center;
+flex-direction:column;
+
+.garden-title{
+  font-weight:${tokens.fontWeights.medium};
+}
+
+padding:${tokens.space[4]};
+border-radius: 2px;
+color:${tokens.colors.primary[1]};
+box-shadow: 0 0 2px rgba(33,33,33,.2);
+border-bottom:0;
+transition: all .4s ease-in-out;
+&:hover{
+    box-shadow: 0 0 6px rgba(33,33,33,.2); 
+    border-bottom: 1px solid ${tokens.colors.primary[0]};
+}
+
+.footer_notes{
+  font-size:${tokens.fontSizes[2]};
+  font-weight:${tokens.fontWeights.medium};
+  display:flex;
+  justify-content:space-between;
+  .level{
+    color:${tokens.colors.tertiary[1]}
+  }
+}
+`;
+
 export {
     HeaderContainer,
     FilterSection,
-    TopicsSection
+    TopicsSection,
+    GardenContainer
 };

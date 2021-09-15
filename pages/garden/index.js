@@ -2,78 +2,12 @@ import Layout from '../Layout';
 import { getDatabase } from "../../lib/notion";
 import Link from "next/link";
 import styles from './index.module.css'
-import { HeaderContainer, FilterSection, TopicsSection } from '../../components/common';
+import { HeaderContainer, FilterSection, TopicsSection, GardenContainer } from '../../components/common';
 import {tokens} from "../../config/themes"
-import {extractTopicsFromGardenQuery} from '../../util/gargenUtil';
-// import styles from '../../styles/garden.css';
-import styled from 'styled-components';
+import { transformGardenQuery, extractTopicsFromGardenQuery} from '../../util/gargenUtil';
+import {dateFormatter} from '../../util/common';
 
 export const databaseId = process.env.NOTION_DATABASE_ID;
-
-// const HeaderContainer =  styled.div`
-// padding:2% 0 4%;
-// width:100%;
-// h1{
-//   font-weight:${tokens.fontWeights.medium};
-// }
-// p{
-//   width:50%;
-//   margin-top:${tokens.space[5]};
-// }
-// @media only screen and (max-width: 768px) {
-//      p{
-//       width:80%;
-//      }
-//   }
-//   @media only screen and (max-width: 576px) {
-//     p{
-//      width:100%;
-//     }
-//  }
-// `;
-
-// const FilterSection =  styled.div`
-// padding:2% 4% 0 4%;
-// display:flex;
-// justify-content:flex-end;
-// span{
-//   margin:0 ${tokens.space[2]};
-//   padding:${tokens.space[1]} ${tokens.space[2]};
-//   border-radius:5px;
-//   cursor:pointer;
-//   border:0.5px solid ${tokens.colors.tertiary[3]};
-//   &:hover{
-//     background-color:${tokens.colors.tertiary[2]};
-//     border:0.5px solid ${tokens.colors.tertiary[2]};
-//   }
-//   @media only screen and (max-width: 576px) {
-//     margin:0 ${tokens.space[1]};
-//     padding:${tokens.space[1]};
-//     text-align:center;
-//  }
-// }
-// `;
-
-// const TopicsSection =  styled.div`
-// padding:2% 4% 0 4%;
-// display:flex;
-// flex-wrap:wrap;
-// justify-content:flex-start;
-// color:${tokens.colors.tertiary[0]};
-// span{
-//   margin:0 ${tokens.space[2]};
-//   padding:${tokens.space[1]} ${tokens.space[2]};
-//   cursor:pointer;
-//   &:hover{
-//     color:${tokens.colors.primary[1]};
-//   }
-//   @media only screen and (max-width: 576px) {
-//     margin:0 ${tokens.space[1]};
-//     padding:${tokens.space[1]};
-//     text-align:center;
-//  }
-// }
-// `;
 
 const Text = ({ text }) => {
     if (!text) {
@@ -102,10 +36,36 @@ const Text = ({ text }) => {
     });
   };
 
+
 export default function Garden({posts}) {
-  const growthStage = tokens.terms.garden;
-  const gardenTopics = extractTopicsFromGardenQuery(posts);
+  var growthStage = tokens.terms.garden,
+        gardenQuery = transformGardenQuery(posts);
+  var gardenTopics = extractTopicsFromGardenQuery(posts);
   console.log(posts,gardenTopics);
+
+
+  const handleStateFilter = (key) => {
+    const filteredCards = gardenQuery.edges.filter(card=>{
+      return card.node.frontmatter.growthStage === key
+    });
+
+    setGardenNotes(filteredCards);
+  };
+
+  const handleTopicFilter = (topic) => {
+
+    if(topic==="All") {
+      setGardenNotes(gardenQuery.edges);
+      return;
+    }
+
+    const filteredCards = gardenQuery.edges.filter(card=>{
+      return card.node.frontmatter.topics.includes(topic);
+    });
+
+    setGardenNotes(filteredCards);
+  };
+
 
   return (
     <Layout title="Garden">
@@ -128,6 +88,22 @@ export default function Garden({posts}) {
         }
       </TopicsSection>
       <main className={styles.main}>
+      <GardenContainer>
+        {
+          gardenQuery && gardenQuery.map(post=>(
+            <Link href={post.url}>
+              <GardenContainer.GardenCard>
+                {/* <div className="garden-title"> <Text text={post.properties.Name.title} /></div> */}
+                <div>{post.title}</div>
+                <div className="footer_notes">
+                  <span>{dateFormatter(post.editedAt)}</span>
+                  <span className="level">{growthStage[post.growthStage].label} {growthStage[post.growthStage].icon}</span>
+                </div>
+              </GardenContainer.GardenCard>
+            </Link>
+          ))
+        }
+      </GardenContainer>
         <ol className={styles.posts}>
           {posts.map((post) => {
             const date = new Date(post.last_edited_time).toLocaleString(
