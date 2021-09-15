@@ -9,33 +9,6 @@ import {dateFormatter} from '../../util/common';
 
 export const databaseId = process.env.NOTION_DATABASE_ID;
 
-const Text = ({ text }) => {
-    if (!text) {
-      return null;
-    }
-    return text.map((value) => {
-      const {
-        annotations: { bold, code, color, italic, strikethrough, underline },
-        text,
-      } = value;
-      return (
-        <span
-          className={[
-            bold ? styles.bold : "",
-            code ? styles.code : "",
-            italic ? styles.italic : "",
-            strikethrough ? styles.strikethrough : "",
-            underline ? styles.underline : "",
-          ].join(" ")}
-          style={color !== "default" ? { color } : {}}
-          key={value.index}
-        >
-          {text.link ? <a href={text.link.url}>{text.content}</a> : text.content}
-        </span>
-      );
-    });
-  };
-
 
 export default function Garden({posts}) {
   var growthStage = tokens.terms.garden,
@@ -104,37 +77,6 @@ export default function Garden({posts}) {
           ))
         }
       </GardenContainer>
-        <ol className={styles.posts}>
-          {posts.map((post) => {
-            const date = new Date(post.last_edited_time).toLocaleString(
-              "en-US",
-              {
-                month: "short",
-                day: "2-digit",
-                year: "numeric",
-              }
-            );
-            return (
-              <li key={post.id} className={styles.post}>
-                <h3 className={styles.postTitle}>
-                  <Link href={`/garden/${post.id}`}>
-                    <a>
-                        {/* <p>{post.properties.Name.title}</p> */}
-                      <Text text={post.properties.Name.title} />
-                      <Text text={post.properties.Growth.rich_text} />
-                    </a>
-                  </Link>
-                </h3>
-
-                <p className={styles.postDescription}>{date}</p>
-                <Link href={`/garden/${post.id}`}>
-                  <a> Read post →</a>
-                </Link>
-              </li>
-            );
-          })}
-        </ol>
-   
       </main>
     </Layout>
   )
