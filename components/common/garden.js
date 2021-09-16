@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import {tokens} from "../config/themes"
+import {tokens} from "../../config/themes"
 
 const HeaderContainer =  styled.div`
 padding:2% 0 4%;
@@ -70,33 +70,22 @@ const GardenContainer =  styled.div`
   display:flex;
   flex-wrap:wrap;
   float:left;
-  div{
-    margin:${tokens.space[6]} ${tokens.space[6]} 0 0;
-  }
-  @media only screen and (max-width: 576px) {
-    a{
-      width:100%;
-      div{
-        width:100%;
-        margin:${tokens.space[4]} 0;
-      }
-    }
-}
 `;
 
 GardenContainer.GardenCard =  styled.div`
-height:130px;
-width:280px;
+height:120px;
+width:250px;
 background-color:#FCFBFE;
 display:flex;
 justify-content:space-between;
-// align-items:center;
 flex-direction:column;
+cursor:pointer;
 
 .garden-title{
   font-weight:${tokens.fontWeights.medium};
 }
 
+margin:${tokens.space[6]} ${tokens.space[6]} 0 0;
 padding:${tokens.space[4]};
 border-radius: 2px;
 color:${tokens.colors.primary[1]};
@@ -117,6 +106,12 @@ transition: all .4s ease-in-out;
     color:${tokens.colors.tertiary[1]}
   }
 }
+
+@media only screen and (max-width: 576px) {
+      width:100%;
+      margin:${tokens.space[4]} 0;
+}
+
 `;
 
 export {

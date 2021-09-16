@@ -3,7 +3,7 @@ import Layout from '../Layout';
 import { getDatabase } from "../../lib/notion";
 import Link from "next/link";
 import styles from './index.module.css'
-import { HeaderContainer, FilterSection, TopicsSection, GardenContainer } from '../../components/common';
+import { HeaderContainer, FilterSection, TopicsSection, GardenContainer } from '../../components/common/garden';
 import {tokens} from "../../config/themes"
 import { transformGardenQuery, extractTopicsFromGardenQuery} from '../../util/gargenUtil';
 import {dateFormatter} from '../../util/common';

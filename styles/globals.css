@@ -51,3 +51,7 @@ blockquote:before {
 blockquote p {
     display: inline;
 }
+
+a:hover {
+    cursor: pointer;
+}
