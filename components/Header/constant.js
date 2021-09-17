@@ -19,9 +19,9 @@ export const LINKS = [
     //     label:'Work',
     //     link:'/work'
     // },
-    // {
-    //     id:'about',
-    //     label:'About',
-    //     link:'/about'
-    // }
+    {
+        id:'about',
+        label:'About',
+        link:'/about'
+    }
 ]
