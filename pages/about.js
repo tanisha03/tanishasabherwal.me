@@ -2,9 +2,7 @@ import Layout from './Layout';
 import {ABOUT_DATA, TALKS, ARTICLE_LINKS} from "../config/about";
 import styled from 'styled-components';
 import {tokens} from "../config/themes"
-import ProfilePicture from "../assets/images/profile.png"
-import {Icons} from "../assets/icon.js"
-import Image from 'next/image'
+import {Icons} from "../assets/Icon.js"
 
 const AboutSection=styled.div`
     display:flex;
