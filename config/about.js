@@ -1,5 +1,5 @@
 export const ABOUT_DATA = {
-    heading: 'Hi 👋 I am Tanisha !',
+    heading: 'Hi 👋 I am Tanisha!',
     description: [
         "I am a computer science engineer who has an eye for digital products. I love to quench my thirst for “why to build” and “how to build”. I enjoy Product-driven development along with discussing UX flows, accessibility, designs  pattern and business with anyone and everyone.",
 

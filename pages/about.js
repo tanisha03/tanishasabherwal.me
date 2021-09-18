@@ -6,14 +6,11 @@ import {Icons} from "../assets/Icon.js"
 
 const AboutSection=styled.div`
     display:flex;
-    // justify-content:center;
-    // align-items:center;
     padding:${tokens.space[8]} 0;
     color:${tokens.colors.primary[0]};
     width:100%;
     div{
         max-width:70%;
-        margin-right:5%;
     }
     h1{
         margin-bottom:${tokens.space[8]};
@@ -25,17 +22,13 @@ const AboutSection=styled.div`
         text-align: justify;
     }
     img{
-        // width:25%;
         box-shadow: 6px 6px 0 0 white, 6px 6px 0 2px ${tokens.colors.primary[1]};
     }
     @media only screen and (max-width: 768px) {
         flex-direction:column;
         div{
-            width:70%
+            max-width:100%
         }
-        // img{
-        //     margin-top:${tokens.space[8]};
-        // }
     }
 `;
 
@@ -53,6 +46,12 @@ const DesriptionSection= styled.div`
         font-size:${tokens.fontSizes[5]};
         color:${tokens.colors.tertiary[0]};
         margin-bottom:${tokens.space[4]};
+    }
+    a{
+        text-decoration: none;
+        @media only screen and (max-width: 1024px) {
+            width: 100%;
+        }
     }
     iframe{
         margin:0 ${tokens.space[4]} ${tokens.space[4]} 0;
@@ -107,12 +106,12 @@ const MediumCard = styled.div`
         margin: ${tokens.space[4]} 0;
     }
     @media only screen and (max-width: 576px) {
-        height:160px;
+        height:140px;
         .title{
-            font-size:${tokens.fontSizes[4]};
+            font-size:${tokens.fontSizes[3]};
         }
         img{
-            width:150px;
+            width:120px;
         }
     }
 `;
