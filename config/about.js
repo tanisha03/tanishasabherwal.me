@@ -7,7 +7,7 @@ export const ABOUT_DATA = {
 
         "When I am away from my screen, I read books, play my favourite chords on uklele, paint and love do DIYs."
     ],
-    resume: '#',
+    resume: 'https://drive.google.com/file/d/1eMc_mZVwa_4GjBKiIxXGvaUnGox9gKC7/view?usp=sharing',
     talks: [{
         title: 'Accessibility',
         link: ''
