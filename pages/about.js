@@ -119,7 +119,7 @@ const MediumCard = styled.div`
 
 const AboutPage = () => {
   return (
-    <Layout>
+    <Layout pageTitle="About Tanisha Sabherwal" description="Personal website of Tanisha Sabherwal tanisha03 tanishaaa03 tanisha031199@gmail.com">
         <AboutSection>
             <div>
                 <h1>{ABOUT_DATA.heading}</h1>

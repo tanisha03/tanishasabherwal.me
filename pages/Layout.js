@@ -27,8 +27,14 @@ export default function Home(props) {
     <div className={styles.container}>
       
       <Head>
-        <title>{props.title}</title>
-        <link rel="icon" href="/favicon.ico" />
+        <title>{props.pageTitle}</title>
+        <meta name='description' content={props.description}></meta>
++       <meta property='og:title' content={props.pageTitle} key='ogtitle' />
++       <meta property='og:description' content={props.description} key='ogdesc' />
+        <meta property='og:url' content='https://tanishasabherwal.me/' />
+        <meta property='og:type' content='portfolio website' />
+        <meta property='og:image' content='logo.png' key='ogimage' />
+        <link rel='icon' href='/favicon.ico' />
         <link href='https://fonts.googleapis.com/css?family=Montserrat' rel='stylesheet'></link>
       </Head>
 

@@ -24,7 +24,7 @@ const HomeContainer = styled.div`
 
 export default function Home() {
   return (
-    <Layout title="Tanisha Sabherwal">
+    <Layout title="Tanisha Sabherwal" description="Personal website of Tanisha Sabherwal tanisha03 tanishaaa03 tanisha031199@gmail.com">
         <HomeContainer>
           <section>
                 <h1>Hi 👋 I am Tanisha!</h1>
