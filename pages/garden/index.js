@@ -15,7 +15,6 @@ export default function Garden({posts}) {
   const [gardenQuery, setGardenQuery] = useState(transformGardenQuery(posts));
   var growthStage = tokens.terms.garden;
   var gardenTopics = extractTopicsFromGardenQuery(posts);
-  console.log(posts,gardenTopics);
 
   const handleStateFilter = (key) => {
     const filteredCards = transformGardenQuery(posts).filter(card=>{
