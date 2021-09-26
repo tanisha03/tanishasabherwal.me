@@ -83,7 +83,6 @@ export default function Garden({posts}) {
 
 export const getStaticProps = async () => {
     const database = await getDatabase(databaseId);
-  
     return {
       props: {
         posts: database,

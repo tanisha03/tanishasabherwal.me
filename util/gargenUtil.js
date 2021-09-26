@@ -1,9 +1,9 @@
 const transformGardenQuery = (posts) => {
-  let trandformedPosts = [];
+  let transformedPosts = [];
   posts.forEach( post => {
     let topicList = post.properties.Tags.multi_select.map( topic => topic.name );
     
-    trandformedPosts.push({
+    transformedPosts.push({
       url: `/garden/${post.id}`,
       title: post.properties.Name.title[0].plain_text,
       editedAt: post.last_edited_time,
@@ -12,7 +12,8 @@ const transformGardenQuery = (posts) => {
     });
   });
   
-  return trandformedPosts;
+  transformedPosts = transformedPosts.sort( (a,b) => new Date(b.editedAt) - new Date(a.editedAt) );
+  return transformedPosts;
 }
 
 const extractTopicsFromGardenQuery = (posts) => {
@@ -35,14 +36,6 @@ const Text = ({ text }) => {
     } = value;
     return (
       <span
-        // className={[
-        //   bold ? styles.bold : "",
-        //   code ? styles.code : "",
-        //   italic ? styles.italic : "",
-        //   strikethrough ? styles.strikethrough : "",
-        //   underline ? styles.underline : "",
-        // ].join(" ")}
-        // style={color !== "default" ? { color } : {}}
         key={value.index}
       >
         {text.link ? <a href={text.link.url}>{text.content}</a> : text.content}
