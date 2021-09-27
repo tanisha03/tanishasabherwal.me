@@ -40,7 +40,7 @@ export default function Garden({posts}) {
 
 
   return (
-    <Layout pageTitle="Tanisha's Digital Garden" description="Personal website and digital garden of Tanisha Sabherwal tanisha03 tanishaaa03 tanisha031199@gmail.com">
+    <Layout pageTitle="Tanisha's Digital Garden" description="Personal website and digital garden of Tanisha Sabherwal for growing learnings all aroun tech, design, products and business thinking.">
       <HeaderContainer>
         <h1>Digital Garden</h1>
         <p>A personal internet space containing my personal wiki of some loosely knit thoughts, ideas, learnings, and work. Some are as fresh as a sapling, while others are being tendered into flowers but some remain to be forever blooming and evergreen.</p>
