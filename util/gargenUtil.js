@@ -1,3 +1,5 @@
+import styles from '../pages/fintech/post.module.css';
+
 const transformGardenQuery = (posts) => {
   let transformedPosts = [];
   posts.forEach( post => {
@@ -36,6 +38,14 @@ const Text = ({ text }) => {
     } = value;
     return (
       <span
+        className={[
+          bold ? styles.bold : "",
+          code ? styles.code : "",
+          italic ? styles.italic : "",
+          strikethrough ? styles.strikethrough : "",
+          underline ? styles.underline : "",
+        ].join(" ")}
+        style={color !== "default" ? { color } : {}}
         key={value.index}
       >
         {text.link ? <a href={text.link.url}>{text.content}</a> : text.content}
