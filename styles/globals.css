@@ -51,3 +51,7 @@ blockquote p {
 a:hover {
     cursor: pointer;
 }
+
+p {
+    margin: 12px 0;
+}
