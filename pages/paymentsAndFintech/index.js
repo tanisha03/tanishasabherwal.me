@@ -9,7 +9,7 @@ export const databaseId = process.env.NOTION_PAYMENTS_BLOG_ID;
 
 export default function Home({ posts }) {
   return (
-    <Layout>
+    <Layout pageTitle="India's Digital Payments & FinTech" description="Everything about digital payments, products, processes and FinTechs in a digitally enabled Indian ecosystem.">
 
       <main className={styles.container}>
         <header className={styles.header}>

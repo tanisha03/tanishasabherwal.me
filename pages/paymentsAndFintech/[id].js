@@ -12,7 +12,7 @@ export default function Post({ page, blocks }) {
     return <div />;
   }
   return (
-    <Layout title="Post">
+    <Layout pageTitle={page.properties.Name.title}>
       <article className={styles.container}>
         <h1 className={styles.name}>
           <Text text={page.properties.Name.title} />
