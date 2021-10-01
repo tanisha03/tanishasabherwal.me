@@ -1,4 +1,4 @@
-import styles from '../pages/fintech/post.module.css';
+import styles from '../pages/paymentsAndFintech/post.module.css';
 
 const transformGardenQuery = (posts) => {
   let transformedPosts = [];

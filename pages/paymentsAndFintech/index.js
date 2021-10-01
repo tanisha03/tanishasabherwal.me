@@ -33,7 +33,7 @@ export default function Home({ posts }) {
             return (
               <li key={post.id} className={styles.post}>
                 <h3 className={styles.postTitle}>
-                  <Link href={`/fintech/${post.id}`}>
+                  <Link href={`/paymentsAndFintech/${post.id}`}>
                     <a>
                       <Text text={post.properties.Name.title} />
                     </a>
@@ -41,7 +41,7 @@ export default function Home({ posts }) {
                 </h3>
 
                 <p className={styles.postDescription}>{date}</p>
-                <Link href={`/fintech/${post.id}`}>
+                <Link href={`/paymentsAndFintech/${post.id}`}>
                   <a> Read post →</a>
                 </Link>
               </li>

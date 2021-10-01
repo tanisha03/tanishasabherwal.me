@@ -35,7 +35,7 @@ export default function Home() {
                 <h2>CURRENTLY: </h2>
                 <p>Doing something Frontend at <a target="_blank" href="https://www.jpmorganchase.com/">JP Morgan Chase & Co.</a></p>
                 <p>Curating <a target="_blank" href="https://buttondown.email/tanisha">Web-end</a> by learning in public about frontend, design, UI, web dev, & products.</p>
-                <p>Demystifying India's <Link href="/fintech">digital payments and FinTech</Link> space bit by bit.</p>
+                <p>Demystifying India's <Link href="/paymentsAndFintech">digital payments and FinTech</Link> space bit by bit.</p>
             </section>
             <section>
                 <h2>ALSO, </h2>
