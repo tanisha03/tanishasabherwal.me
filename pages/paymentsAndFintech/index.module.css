@@ -41,12 +41,12 @@
 }
 
 .post {
-    margin-bottom: 50px;
+    margin-bottom: 12px;
 }
 
 .postTitle {
     margin-bottom: 10px;
-    font-size: 1.4rem;
+    font-size: 1.1rem;
 }
 
 .postTitle a {
@@ -58,4 +58,17 @@
     margin-top: 0;
     margin-bottom: 12px;
     opacity: 0.65;
+}
+
+.link {
+    display: flex;
+    align-items: center;
+}
+
+.link svg {
+    margin-right: 8px;
+}
+
+.link span {
+    border-bottom: 1.5px solid #cacaca;
 }
