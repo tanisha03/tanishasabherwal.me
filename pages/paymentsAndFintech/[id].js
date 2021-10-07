@@ -17,6 +17,7 @@ export default function Post({ page, blocks }) {
         <h1 className={styles.name}>
           <Text text={page.properties.Name.title} />
         </h1>
+        <div className={styles.date}>{new Date(page.properties.Date.date.start).toLocaleDateString("en-US", {year: 'numeric', month: 'long', day: 'numeric'})}</div>
         <section>
           {blocks.map((block) => (
             <Fragment key={block.id}>{renderBlock(block)}</Fragment>

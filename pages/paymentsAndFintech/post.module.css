@@ -54,3 +54,9 @@
 .underline {
     text-decoration: underline;
 }
+
+.date {
+    font-size: 1em;
+    color: #666;
+    margin-bottom: 2em;
+}
