@@ -24,7 +24,7 @@ p{
 `;
 
 const FilterSection =  styled.div`
-padding:2% 4% 0 4%;
+padding:2% 4% 4% 4%;
 display:flex;
 justify-content:flex-end;
 span{
