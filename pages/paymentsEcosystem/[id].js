@@ -3,7 +3,7 @@ import { getDatabase, getPage, getBlocks } from "../../lib/notion";
 import Link from "next/link";
 import { databaseId } from "./index.js";
 import styles from "./post.module.css";
-import Layout from '../../pages/Layout';
+import Layout from '../Layout';
 import { renderBlock, Text } from '../../util/gargenUtil';
 
 
